@@ -1,5 +1,54 @@
-/* Color Palatte */
+/* Font */
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-ExtraBold.ttf");
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-ExtraLight.ttf");
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-Medium.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-Regular.ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Dosis";
+    src: url("/static/fonts/Dosis-SemiBold.ttf");
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Color Palatte */
 :root {
 	--ctp-latte-rosewater: #dc8a78;
 	--ctp-frappe-rosewater: #f2d5cf;
@@ -121,6 +170,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100%;
+    font-family: Dosis, sans-serif;
 }
 
 .main {
@@ -137,10 +187,14 @@ body {
     border-radius: 2.5em;
     width: 100%;
     height: 100%;
-    padding: 20px;
+    padding: 3em;
     min-height: 300px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
     z-index: 10;
+}
+
+h1 {
+    font-size: 3em;
 }
 
 .circle {
@@ -193,7 +247,11 @@ body {
     .sub-rectangle {
         display: none;
     }
+    .content-wrapper {
+        padding: 2em;
+    }
+    h1 {
+        font-size: 2.2em;
+    }
 }
-
-
 
