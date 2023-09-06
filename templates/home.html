@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="sub-rectangle bottom-left"></div>
+<div class="sub-rectangle top-right"></div>
+<div class="content-wrapper">
+    <div class="subheading-container">
+        <h4>Hi, I'm</h4>
+    </div>
+    <div class="heading-container">
+        <h1>Tom Keilers</h1>
+    </div>
+    <div class="content">
+        {% if language == "de" %}
+    Momentan Informatikstudent an der <a class="visible-link" href="https://fau.de">Friedrich-Alexander-University Erlangen-Nürnberg</a>. Neben der Uni Werkstudent bei <a class="visible-link" href="https://walaris.com">Walaris</a>. Ich mag es neue Dinge zu lernen. Bitte, schau dich um und lerne mich ein wenig besser kennen! Fühl dich ganz wie zu Hause.
+        {% elif language == "en" %}
+    Currently enrolled as a Computer Science major at <a class="visible-link" href="https://fau.de">Friedrich-Alexander-University Erlangen-Nürnberg</a>. Also working at <a class="visible-link" href="https://walaris.com">Walaris</a>. I love learning new stuff. Please have a look around and get to know me better!
+        {% elif language == "jp" %}
+        {% endif %}
+    </div>
+    <div class="menu-container">
+        <nav class="navbar">
+            <ul class="menu-list">
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+                <li><a href="#"></a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+{% endblock content %}

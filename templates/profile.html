@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+    <div class="profile-img-container">
+        <img src="{{ url_for('static', filename='img/profile.heic') }}" alt="Profile Image" class="profile-img">
+    </div>
+    <div class="heading-container">
+        <h1 class="heading">Tom Keilers</h1>
+    </div>
+    <div class="sub-heading">
+        <p class="sub-heading">Certified Netizen</p>
+    </div>
+{% endblock content %}
