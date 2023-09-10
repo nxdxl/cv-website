@@ -27,6 +27,11 @@ function removeAnimation() {
 }
 
 function addAnimation() {
+    console.log(document.body.clientWidth);
+    if(document.body.clientWidth < 561) {
+        setTimeout(removeAnimation, 500);
+        return;
+    }
     content_wrapper.classList.add("animate-main");
     rectangle_top_right.classList.add("animate-top-square");
     rectangle_bottom_left.classList.add("animate-bottom-square");
