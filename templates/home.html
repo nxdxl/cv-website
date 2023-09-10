@@ -1,8 +1,11 @@
 {% extends "layout.html" %}
 {% block content %}
+
 <div class="heading-container" id="heading-container">
     <h1>Hi, I'm Tom Keilers</h1>
+    <i class="bi bi-translate"></i>
 </div>
+
 <div class="content" id="content">
     <p>
     {% if language == "de" %}
@@ -15,15 +18,15 @@
     <!-- TODO make language -->
     <p id="bad"><br> This page is not supposed to be viewed in landscape mode...</p>
 </div>
+
 <div class="menu-container" id="menu-container">
-    <ul class="menu-list" id="menu-list">
+    <ul class="menu-list display-off" id="menu-list">
         <li class="list-item" id="profile-item"><i class="bi bi-person-fill"></i>Profile</li>
         <li class="list-item" id="projects-item"><i class="bi bi-gear-fill"></i>Projects</li>
         <li class="list-item" id="cv-item"><i class="bi bi-file-text-fill"></i>CV</li>
         <li class="list-item" id="contact-item"><i class="bi bi-telephone-fill"></i>Contact</li>
     </ul>
+    <div id=open-menu>Menu</div>
 </div>
-<div class="content-wrapper" id="contact-form">
-    Hallo
-</div>
+
 {% endblock content %}
