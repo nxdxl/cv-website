@@ -40,7 +40,6 @@ function addAnimation() {
 
 list_items.forEach(item => {
     item.addEventListener("click", function() {
-        // console.log("print");
         content.classList.add("vanish");
         heading_container.classList.add("vanish");
         menu.classList.add("vanish");

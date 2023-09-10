@@ -313,15 +313,16 @@ body {
         height: 100%;
         transform: translate(0, 0);
     }
+    /* lower means more left, higher is lower */
     95% {
         width: 70%;
         height: 70%;
-        transform: translate(-9.9%, 40%);
+        transform: translate(-14.3%, 57.2%);
     }
     100% {
         width: 70%;
         height: 70%;
-        transform: translate(-9.9%, 40%);
+        transform: translate(-14.3%, 57.2%);
     }
 }
 
@@ -359,13 +360,13 @@ body {
     }
     95% {
         /* ( smaller number means more left , the higher, the lower it goes ) */
-        transform: translate(-14.3%, 14.3%);
+        transform: translate(-9.9%, 10.0%);
         height: 100%;
         width: 100%;
         z-index: 11;
     }
     100% {
-        transform: translate(-14.3%, 14.3%);
+        transform: translate(-9.9%, 10.0%);
         height: 100%;
         width: 100%;
         z-index: 11;
