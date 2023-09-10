@@ -1,14 +1,11 @@
-// const list_items = document.getElementsByClassName("list-item");
 const content_wrapper = document.getElementById("home");
 const heading_container = document.getElementById("heading-container");
 const rectangle_top_right = document.getElementById("rectangle-top-right");
 const rectangle_bottom_left = document.getElementById("rectangle-bottom-left");
 const content = document.getElementById("content");
 const menu = document.getElementById("menu-container");
-
-const contact = document.getElementById("contact-item");
-
 const list_items = document.querySelectorAll(".list-item");
+const triangle = document.getElementById("bottom-right-triangle");
 
 function hasClass(element, clsName) {
         return(' ' + element.className + ' ').indexOf(' ' + clsName + ' ') > -1;
@@ -24,6 +21,7 @@ function removeAnimation() {
     heading_container.classList.add("introduce");
     content.classList.add("introduce");
     menu.classList.add("introduce");
+    triangle.classList.remove("rotate");
 }
 
 function addAnimation() {
@@ -48,6 +46,7 @@ list_items.forEach(item => {
         content.classList.add("vanish");
         heading_container.classList.add("vanish");
         menu.classList.add("vanish");
+        triangle.classList.add("rotate");
         setTimeout(addAnimation, 500);
     });
 });

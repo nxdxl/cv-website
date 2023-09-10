@@ -192,6 +192,7 @@ body {
     min-height: 100vh;
     font-family: Dosis, sans-serif;
     font-size: 1.5em;
+    overflow: hidden;
     /* fixes mobile viewport bug/feature */
     min-height: -webkit-fill-available;
 }
@@ -376,6 +377,13 @@ i {
     }
 }
 
+@Keyframes rotate {
+    0% {}
+    100% {
+        transform: rotate(720deg);
+    }
+}
+
 /*-------------------------------------------------------*/
 /*-----------------------Keyframes-----------------------*/
 /*-------------------------------------------------------*/
@@ -394,9 +402,15 @@ i {
 
 .triangle {
     width: 200px;
-    height: 200px;
+    height: 175px;
     background: var(--autumn-blue);
-    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    /* clip-path: polygon(0% 100%, 50% 0%, 100% 100%); */
+    clip-path: polygon(50% 0%, 61.8% 38.2%, 100% 38.2%, 68.2% 61.8%, 81.8% 100%, 50% 77.3%, 18.2% 100%, 31.8% 61.8%, 0% 38.2%, 38.2% 38.2%);
+}
+
+.rotate {
+    transform-origin: 50% 55%;
+    animation: rotate 1s ease-in-out;
 }
 
 .top-left {
@@ -471,11 +485,11 @@ i {
         display: flex;
         flex-direction: column;
         margin: 0;
-        display: none;
+        /* display: none; */
     }
 }
 
-@media only screen and (max-height: 20em) {
+@media only screen and (max-height: 22em) {
     .menu-container {
         display: none;
     }
