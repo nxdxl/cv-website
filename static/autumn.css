@@ -217,7 +217,7 @@ body {
 }
 
 .animate-main {
-    animation: transform-and-move-main 1s ease-in-out;
+    animation: transform-and-move-main 0.5s;
 }
 
 .heading-container {
@@ -287,11 +287,11 @@ body {
 }
 
 .introduce {
-    animation: introduce 1s ease-in-out;
+    animation: introduce 0.5s;
 }
 
 .vanish {
-    animation: vanish 1s ease-in-out forwards;
+    animation: vanish 0.5s forwards;
 }
 
 #contact-form {
@@ -433,7 +433,7 @@ body {
 }
 
 .animate-bottom-square {
-    animation: transform-and-move-bottom 1s ease-in-out;
+    animation: transform-and-move-bottom 0.5s;
 }
 
 .sub-rectangle.top-right {
@@ -442,7 +442,7 @@ body {
 }
 
 .animate-top-square {
-    animation: transform-and-move-top 1s ease-in-out;
+    animation: transform-and-move-top 0.5s;
 }
 
 /*-------------------------------------------------------*/

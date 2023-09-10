@@ -35,7 +35,7 @@ function addAnimation() {
         menu.classList.remove("introduce");
         heading_container.classList.remove("introduce");
     }
-    setTimeout(removeAnimation, 1000);
+    setTimeout(removeAnimation, 500);
 }
 
 list_items.forEach(item => {
@@ -43,6 +43,6 @@ list_items.forEach(item => {
         content.classList.add("vanish");
         heading_container.classList.add("vanish");
         menu.classList.add("vanish");
-        setTimeout(addAnimation, 1000);
+        setTimeout(addAnimation, 500);
     });
 });
