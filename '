@@ -69,7 +69,7 @@ list_items.forEach(item => {
     });
 });
 
-menu_button.addEventListener("click", () => {toggle_phone_menu()});
+menu_button.addEventListener("click", toggle_phone_menu());
 
 
 

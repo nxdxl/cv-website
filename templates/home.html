@@ -1,36 +1,32 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="sub-rectangle bottom-left" id="rectangle-bottom-left"></div>
-<div class="sub-rectangle top-right" id="rectangle-top-right"></div>
-<div class="content-wrapper" id="home">
-    <div class="heading-container" id="heading-container">
-        <h1>Hi, I'm Tom Keilers</h1>
-    </div>
-    <div class="content" id="content">
-        <p>
-        {% if language == "de" %}
-        Momentan Informatikstudent an der <a class="visible-link" href="https://fau.de">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Neben der Uni Werkstudent bei <a class="visible-link" href="https://walaris.com">Walaris</a>. Ich mag es neue Dinge zu lernen. Bitte, schau dich gerne um! Fühl dich ganz wie zu Hause.
-        {% elif language == "en" %}
-    Currently enrolled as a Computer Science major at <a class="visible-link" href="https://fau.de">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Alongside university, I'm also working at <a class="visible-link" href="https://walaris.com">Walaris</a>. I love learning new stuff.<br> Please have a look around and get to know me better!
-        {% elif language == "jp" %}
-        {% endif %}
-        </p>
-        
-        <!-- TODO make language -->
-        <p id="bad"><br> This page is not supposed to be viewed in landscape mode...</p>
-    </div>
-    <div class="menu-container" id="menu-container">
-        <nav class="navbar">
-            <ul class="menu-list" id="menu-list">
-                <li class="list-item" id="profile-item">Profile</li>
-                <li class="list-item" id="projects-item">Projects</li>
-                <li class="list-item" id="cv-item">CV</li>
-                <li class="list-item" id="contact-item">Contact</li>
-            </ul>
-        </nav>
-    </div>
+
+<div class="heading-container" id="heading-container">
+    <h1>Hi, I'm Tom Keilers</h1>
+    <i class="bi bi-translate"></i>
 </div>
-<div class="content-wrapper" id="contact-form">
-    Hallo
+
+<div class="content" id="content">
+    <p>
+    {% if language == "de" %}
+    Momentan Informatikstudent an der <a class="visible-link" href="https://fau.de" target="_blank" rel="noopener noreferrer">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Neben der Uni Werkstudent bei <a class="visible-link" href="https://walaris.com" target="_blank" rel="noopener noreferrer">Walaris</a>. Ich mag es neue Dinge zu lernen. Bitte, schau dich gerne um! Fühl dich ganz wie zu Hause.
+    {% elif language == "en" %}
+    Currently enrolled as a Computer Science major at <a class="visible-link" href="https://fau.de" target="_blank" rel="noopener noreferrer">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Alongside university, I'm also working at <a class="visible-link" href="https://walaris.com" target="_blank" rel="noopener noreferrer">Walaris</a>. I love learning new stuff.<br> Please have a look around and get to know me better!
+    {% elif language == "jp" %}
+    {% endif %}
+    </p>
+    <!-- TODO make language -->
+    <p id="bad"><br> This page is not supposed to be viewed in landscape mode...</p>
 </div>
+
+<div class="menu-container" id="menu-container">
+    <ul class="menu-list display-off" id="menu-list">
+        <li class="list-item" id="profile-item"><i class="bi bi-person-fill"></i>Profile</li>
+        <li class="list-item" id="projects-item"><i class="bi bi-gear-fill"></i>Projects</li>
+        <li class="list-item" id="cv-item"><i class="bi bi-file-text-fill"></i>CV</li>
+        <li class="list-item" id="contact-item"><i class="bi bi-telephone-fill"></i>Contact</li>
+    </ul>
+    <div id=open-menu>Menu</div>
+</div>
+
 {% endblock content %}
