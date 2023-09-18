@@ -14,7 +14,7 @@
     <body>
         <header>
             <div id="header-wrapper" class="immutable-bar flex-center">
-                <div id="top-menu-container" class="flex-center">
+                <div class="flex-center menu-bar">
                     <ul class="flex-center">
                         <li class="menu-list-item"><a href="#home">About</a></li>
                         <li class="menu-list-item"><a href="#projects">Projects</a></li>
@@ -23,9 +23,9 @@
                     </ul>
                 </div>
                 <div id="top-icon-container" class="flex-center">
-                    <a href="#home"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"></a>
+                    <a href="#home"><img src="{{ url_for('static', filename='icons/logo.png') }}" alt="Logo"></a>
                 </div>
-                <div id="top-socials-container" class="flex-center">
+                <div class="flex-center menu-bar">
                     <ul class="flex-center">
                         <li class="socials-list-item"><a href=""><i class="bi bi-linkedin"></i></a></li>
                         <li class="socials-list-item"><a href=""><i class="bi bi-gitlab"></i></a></li>

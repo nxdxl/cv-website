@@ -1,14 +1,14 @@
 {
     "projects": [
         {
-            "id": "downloader",
-            "name": "Video-Downloader",
-            "short_description": "FAU Video Downloader short description"
-        },
-        {
             "id": "banking",
             "name": "Mock-Banking-App",
             "short_description": "Mock Banking App short description"
+        },
+        {
+            "id": "downloader",
+            "name": "Video-Downloader",
+            "short_description": "FAU Video Downloader short description"
         }
     ]
 }
