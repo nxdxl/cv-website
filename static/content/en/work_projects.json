@@ -1,0 +1,30 @@
+{
+    "projects": [
+        {
+            "id": "adsb",
+            "name": "Adsb-Interface",
+            "short_description": "A simple program for handling adsb signals from planes using Python and C with standard and external libraries.",
+            "img_source": "img/plane-bounding-box.png",
+            "skills": [
+                "icons/python.svg",
+                "icons/c.svg",
+                "icons/docker.svg",
+                "icons/git.svg"
+            ]
+        },
+        {
+            "id": "pipeline",
+            "name": "Data-Pipeline",
+            "short_description": "A pipeline which enables data transfer through a proxy from our clients to us. Synchronisation is handled with Rsync",
+            "img_source": "img/client-data.png",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
+        }
+    ]
+}

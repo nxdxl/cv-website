@@ -4,30 +4,29 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="author" content="Tom Keilers">
-        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='img/logo.png') }}">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='icons/logo.png') }}">
         <title>Tom Keilers</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-        <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='autumn.css') }}"> -->
         <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css”/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <header>
-            <div id="header-wrapper" class="immutable-bar">
-                <div id="top-menu-container">
-                    <ul>
-                        <li class="menu-list-item"><a href="#home"></a>Home</li>
-                        <li class="menu-list-item"><a href="#about-section">About</a></li>
-                        <li class="menu-list-item"><a href="#projects-section">Projects</a></li>
-                        <li class="menu-list-item"><a href="#skills-section">Skills</a></li>
-                        <li class="menu-list-item"><a href="#contact-section">Contact</a></li>
+            <div id="header-wrapper" class="immutable-bar flex-center">
+                <div id="top-menu-container" class="flex-center">
+                    <ul class="flex-center">
+                        <li class="menu-list-item"><a href="#home">About</a></li>
+                        <li class="menu-list-item"><a href="#projects">Projects</a></li>
+                        <li class="menu-list-item"><a href="#skills">Skills</a></li>
+                        <li class="menu-list-item"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
-                <div id="top-icon-container">
+                <div id="top-icon-container" class="flex-center">
                     <a href="#home"><img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo"></a>
                 </div>
-                <div id="top-socials-container">
-                    <ul>
+                <div id="top-socials-container" class="flex-center">
+                    <ul class="flex-center">
                         <li class="socials-list-item"><a href=""><i class="bi bi-linkedin"></i></a></li>
                         <li class="socials-list-item"><a href=""><i class="bi bi-gitlab"></i></a></li>
                         <li class="socials-list-item"><a href=""><i class="bi bi-youtube"></i></a></li>
@@ -35,28 +34,29 @@
                     </ul>
                 </div>
             </div>
+            <div id="home">
+            </div>
         </header>
-        <main>
-            <div id="content-wrapper">
+        <main class="flex-center">
+            <div id="content-wrapper" class="flex-center">
                 {% block home %}{% endblock %}
-                {% block about %}{% endblock %}
-                {% block projects %}{% endblock %}
-                {% block skills %}{% endblock %}
-                {% block contact %}{% endblock %}
             </div>
         </main>
         <footer>
-            <div id="footer-container" class="immutable-bar">
-                <div id="love">
-                    
+            <div id="footer-wrapper" class="immutable-bar flex-center">
+                <div id="love" class="flex-center">
+                    <div id=p-container>
+                        <p>Made with ❤️ by Tom Keilers.</p>
+                        <p>I also want to thank the <a href="https://github.com/catppuccin" target="_blank">Catppuccin</a> community for designing this amazing color palatte, and the <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> community for designing and providing amazing icons. </p>
+                        <p>Also many thanks to <a target="_blank" href="https://icons8.com">Icons8</a> for providing Icons for my skills!</p>
+                    </div>
                 </div>
-                <div id="bottom-menu-container">
-                    <ul>
-                        <li class="bottom-menu-list-item"><a href="#home">Home</a></li>
-                        <li class="bottom-menu-list-item"><a href="#about-section">About</a></li>
-                        <li class="bottom-menu-list-item"><a href="#projects-section">Projects</a></li>
-                        <li class="bottom-menu-list-item"><a href="#skills-section">Skills</a></li>
-                        <li class="bottom-menu-list-item"><a href="#contact-section">Contact</a></li>
+                <div id="bottom-menu-container" class="flex-center">
+                    <ul class="flex-center">
+                        <li class="bottom-menu-list-item"><a href="#home">About</a></li>
+                        <li class="bottom-menu-list-item"><a href="#projects">Projects</a></li>
+                        <li class="bottom-menu-list-item"><a href="#skills">Skills</a></li>
+                        <li class="bottom-menu-list-item"><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>

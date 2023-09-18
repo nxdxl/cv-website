@@ -1,32 +1,95 @@
-{% extends "layout.html" %}
-{% block content %}
+{% extends "layout_new.html" %}
+{% block home %}
 
-<div class="heading-container" id="heading-container">
-    <h1>Hi, I'm Tom Keilers</h1>
-    <i class="bi bi-translate"></i>
+<div id="about" class="section">
+    <h1>Hi, I'm Tom</h1>
+    <p>I am currently enrolled in Computer Science at the <a href="fau.de">Friedrich-Alexander-Univerity</a> as a full time student.</p>
+    <p>I also work at <a href="walaris.com">Walaris</a> as a Software Developer.</p>
+    <p>I have a passion for learning new things and meeting incredible people!</p>
+</div>
+<div id="projects" class="section flex-center">
+    <h1 id="projects-heading">Projects</h1>
+    <h2>Work Projects</h2>
+    <div id="work-projects" class="project-containers flex-center">
+        {% for project in work_projects %}
+        <div id="{{ project['id'] }}" class="project flex-center">
+            <img src="{{ url_for('static', filename=project['img_source']) }}" alt="{{ project['name'] }}_Image">
+            <div class="used-skills">
+                <ul class="flex-center">
+                    {% for skill in project["skills"] %}
+                    <li><img src="{{ url_for('static', filename=skill) }}" alt={{ skill }}></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="project-text flex-center">
+                <h3>{{ project['name'] }}</h3>
+                <p>{{ project['short_description'] }}</p>
+            </div>
+            <div class="project-link flex-center">
+                <a href="">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <h2>Personal Projects</h2>
+    <div id="personal-projects" class="project-containers flex-center">
+        {% for project in personal_projects %}
+        <div id="{{ project['id'] }}" class="project flex-center">
+        </div>
+        {% endfor %}
+    </div>
+    <h2>Uni Projects</h2>
+    <div id="university-projects" class="project-containers flex-center">
+        {% for project in university_projects %}
+        <div id="{{ project['id'] }}" class="project flex-center">
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<div id="skills" class="section flex-center">
+    <h1>Skills</h1>
+    <div id="badges" class="flex-center">
+        <div id="good">
+            <ul>
+                <li><img src="{{ url_for('static', filename='icons/python.svg') }}" alt=""><p>Python</p></li>
+                <li><img src="{{ url_for('static', filename='icons/docker.svg') }}" alt=""><p>Docker</p></li>
+                <li><img src="{{ url_for('static', filename='icons/git.svg') }}" alt=""><p>Git</p></li>
+                <li><img src="{{ url_for('static', filename='icons/gitlab.svg') }}" alt=""><p>GitLab</p></li>
+                <li><img src="{{ url_for('static', filename='icons/linux.png') }}" alt=""><p>Linux</p></li>
+                <li><img src="{{ url_for('static', filename='icons/bash.svg') }}" alt=""><p>BASH</p></li>
+                <li><img src="{{ url_for('static', filename='icons/html.svg') }}" alt=""><p>Html</p></li>
+                <li><img src="{{ url_for('static', filename='icons/css.svg') }}" alt=""><p>CSS</p></li>
+                <li><img src="{{ url_for('static', filename='icons/javascript.svg') }}" alt=""><p>JavaScript</p></li>
+                <li><img src="{{ url_for('static', filename='icons/nginx.svg') }}" alt=""><p>Nginx</p></li>
+                <li><img src="{{ url_for('static', filename='icons/flask.svg') }}" alt=""><p>Flask</p></li>
+                <li><img src="{{ url_for('static', filename='icons/mysql.svg') }}" alt=""><p>MySQL</p></li>
+                <li><img src="{{ url_for('static', filename='icons/java.svg') }}" alt=""><p>Java</p></li>
+                <li><img src="{{ url_for('static', filename='icons/c.svg') }}" alt=""><p>C</p></li>
+                <li><img src="{{ url_for('static', filename='icons/vim.png') }}" alt=""><p>Vim</p></li>
+                <li><img src="{{ url_for('static', filename='icons/vscode.svg') }}" alt=""><p>VSCode</p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<hr>
+<div id="contact" class="section flex-center">
+    <h1 id="contact-heading">Contact Me</h1>
+    <p>Hey, let's talk! Send me a message through this form, or directly to <a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>. <br/> I am looking forward to hearing from you!</p>
+    <form action="/contact" method="POST" class="flex-center">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+
+        <label for="message">Your Message:</label>
+        <textarea type="text" id="message" name="message"></textarea>
+
+        <div id="submit-button" class="flex-center">
+            <p>Submit</p>
+        </div>
+    </form>
 </div>
 
-<div class="content" id="content">
-    <p>
-    {% if language == "de" %}
-    Momentan Informatikstudent an der <a class="visible-link" href="https://fau.de" target="_blank" rel="noopener noreferrer">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Neben der Uni Werkstudent bei <a class="visible-link" href="https://walaris.com" target="_blank" rel="noopener noreferrer">Walaris</a>. Ich mag es neue Dinge zu lernen. Bitte, schau dich gerne um! Fühl dich ganz wie zu Hause.
-    {% elif language == "en" %}
-    Currently enrolled as a Computer Science major at <a class="visible-link" href="https://fau.de" target="_blank" rel="noopener noreferrer">Friedrich-Alexander-University Erlangen-Nürnberg</a>.<br> Alongside university, I'm also working at <a class="visible-link" href="https://walaris.com" target="_blank" rel="noopener noreferrer">Walaris</a>. I love learning new stuff.<br> Please have a look around and get to know me better!
-    {% elif language == "jp" %}
-    {% endif %}
-    </p>
-    <!-- TODO make language -->
-    <p id="bad"><br> This page is not supposed to be viewed in landscape mode...</p>
-</div>
-
-<div class="menu-container" id="menu-container">
-    <ul class="menu-list display-off" id="menu-list">
-        <li class="list-item" id="profile-item"><i class="bi bi-person-fill"></i>Profile</li>
-        <li class="list-item" id="projects-item"><i class="bi bi-gear-fill"></i>Projects</li>
-        <li class="list-item" id="cv-item"><i class="bi bi-file-text-fill"></i>CV</li>
-        <li class="list-item" id="contact-item"><i class="bi bi-telephone-fill"></i>Contact</li>
-    </ul>
-    <div id=open-menu>Menu</div>
-</div>
-
-{% endblock content %}
+{% endblock home %}
