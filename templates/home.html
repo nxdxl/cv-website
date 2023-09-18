@@ -10,10 +10,10 @@
     </div>
     <div id="about-menu">
         <ul>
-            <li class="menu-list-item"><div class="menu-div flex-center">About</div></li>
-            <li class="menu-list-item"><div class="menu-div flex-center">Projects</div></li>
-            <li class="menu-list-item"><div class="menu-div flex-center">Skills</div></li>
-            <li class="menu-list-item"><div class="menu-div flex-center">Contact</div></li>
+            <li class="menu-list-item"><div id="about-menu-button" class="menu-div flex-center">About</div></li>
+            <li class="menu-list-item"><div id="projects-menu-button" class="menu-div flex-center">Projects</div></li>
+            <li class="menu-list-item"><div id="skills-menu-button" class="menu-div flex-center">Skills</div></li>
+            <li class="menu-list-item"><div id="contact-menu-button" class="menu-div flex-center">Contact</div></li>
         </ul>
     </div>
 </div>
@@ -114,7 +114,7 @@
 <div id="contact" class="section flex-center">
     <h1 id="contact-heading">Contact Me</h1>
     <p>Hey, let's talk! Send me a message through this form, or directly to <a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>. <br/> I am looking forward to hearing from you!</p>
-    <form action="/contact" method="POST" class="flex-center">
+    <form action="/contact#contact" method="POST" class="flex-center" id="contact-form">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name">
 
