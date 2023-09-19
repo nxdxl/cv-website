@@ -13,14 +13,14 @@ def send_mail(mail_data: list) -> None:
 @app.route("/")
 @app.route("/en")
 def en():
-    work_projects = read_json("/app/static/content/en/work_projects.json")["projects"]
-    # work_projects = read_json("/Users/tom/projects/cv-website/static/content/en/work_projects.json")["projects"]
+    # work_projects = read_json("/app/static/content/en/work_projects.json")["projects"]
+    work_projects = read_json("/Users/tom/projects/cv-website/static/content/en/work_projects.json")["projects"]
 
-    personal_projects = read_json("/app/static/content/en/personal_projects.json")["projects"]
-    # personal_projects = read_json("/Users/tom/projects/cv-website/static/content/en/personal_projects.json")["projects"]
+    # personal_projects = read_json("/app/static/content/en/personal_projects.json")["projects"]
+    personal_projects = read_json("/Users/tom/projects/cv-website/static/content/en/personal_projects.json")["projects"]
 
-    university_projects = read_json("/app/static/content/en/uni_projects.json")["projects"]
-    # university_projects = read_json("/Users/tom/projects/cv-website/static/content/en/uni_projects.json")["projects"]
+    # university_projects = read_json("/app/static/content/en/uni_projects.json")["projects"]
+    university_projects = read_json("/Users/tom/projects/cv-website/static/content/en/uni_projects.json")["projects"]
 
     return render_template("home.html", language="en", work_projects=work_projects, personal_projects=personal_projects, university_projects=university_projects)
 

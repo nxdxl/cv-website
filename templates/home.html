@@ -63,28 +63,6 @@
         </div>
         {% endfor %}
     </div>
-    <h2>Uni Projects</h2>
-    <div id="university-projects" class="project-containers flex-center">
-        {% for project in university_projects%}
-        <div id="{{ project['id'] }}" class="project flex-center">
-            <img src="{{ url_for('static', filename=project['img_source']) }}" alt="{{ project['name'] }}_Image">
-            <div class="used-skills">
-                <ul class="flex-center">
-                    {% for skill in project["skills"] %}
-                    <li><img src="{{ url_for('static', filename=skill) }}" alt={{ skill }}></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="project-text flex-center">
-                <h3>{{ project['name'] }}</h3>
-                <p>{{ project['short_description'] }}</p>
-            </div>
-            <div class="project-link flex-center">
-                <a href="">Read More</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
 </div>
 <div id="skills" class="section flex-center">
     <h1>Skills</h1>
