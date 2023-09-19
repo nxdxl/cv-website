@@ -68,24 +68,44 @@ function remove_class(element, class_name) {
 }
 
 function show_nav() {
-    add_class(navlist, "show");
-    remove_class(navlist, "hide");
+    add_class(navlist, "active");
+    remove_class(navlist, "inactive");
 }
 
 function hide_nav() {
-    add_class(navlist, "hide");
-    remove_class(navlist, "show");
+    add_class(navlist, "inactive");
+    remove_class(navlist, "active");
+}
+
+function burger_menu_to_x() {
+    add_class(burger, "active");
+}
+
+function x_to_burger() {
+    remove_class(burger, "active");
 }
 
 function check_screen_size() {
     var screen_width = window.innerWidth || document.documentElement.clientWidth;
     var breakpoint = 730;
     
-    if(has_class(navlist, "hide")) {
-        show_nav();
-    } else {
+    if(has_class(navlist, "active")) {
         hide_nav();
+        x_to_burger();
+    } else {
+        show_nav();
+        burger_menu_to_x();
     }
 }
 
 burger.addEventListener("click", check_screen_size);
+
+document.addEventListener("click", function(event) {
+    if(burger.contains(event.target)) {
+        return;
+    }
+    if(has_class(navlist, "active") && has_class(burger, "active")) {
+        hide_nav();
+        x_to_burger();
+    }
+});
