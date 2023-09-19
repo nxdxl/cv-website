@@ -9,4 +9,5 @@ WORKDIR /app
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT python3 app.py
+# ENTRYPOINT python3 app.py
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "app:app"]
