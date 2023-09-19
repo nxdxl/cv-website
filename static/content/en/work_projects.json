@@ -15,7 +15,7 @@
         {
             "id": "pipeline",
             "name": "Data-Pipeline",
-            "short_description": "A pipeline which enables data transfer through a proxy from our clients to us. Synchronisation is handled with Rsync",
+            "short_description": "A pipeline which enables data transfer through a proxy from our clients to us. Synchronisation is handled with Rsync.",
             "img_source": "img/client-data.png",
             "skills": [
                 "icons/python.svg",
