@@ -1,8 +1,8 @@
 #!/bin/bash
 docker run \
     --restart unless-stopped \
-    -p 5002:5001 \
+    -d \
     -p 8081:8000 \
-    -h tom.keilers.com \
+    -v /home/walkinggiraffe/server/mail-server/mail_pipe:/app/mail_pipe \
     --name cv-website \
     cv-website

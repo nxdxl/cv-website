@@ -8,7 +8,7 @@ def read_json(path: str) -> dict:
         return json.load(json_file)
 
 def send_mail(mail_data: list) -> None:
-    subprocess.run(["sh", "/app/sendmail.sh", mail_data[0], mail_data[1], mail_data[2]])
+    subprocess.run(["bash", "/app/send.sh", mail_data[0], mail_data[1], mail_data[2]])
 
 @app.route("/")
 @app.route("/en")
