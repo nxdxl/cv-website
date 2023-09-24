@@ -100,6 +100,10 @@ a:hover {
     justify-content: center;
 }
 
+::-webkit-scrollbar-track {
+    background: var(--ctp-mocha-base);
+}
+
 /*-------------------------------------------------------*/
 /*------------------------General------------------------*/
 /*-------------------------------------------------------*/
@@ -330,8 +334,11 @@ main {
     width: 100vw;
 }
 
+#projects-heading {
+    margin-bottom: 30px;
+}
+
 #projects h2 {
-    margin-top: 40px;
     margin-bottom: 20px;
 }
 
@@ -368,6 +375,7 @@ main {
     width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .project {
@@ -375,6 +383,7 @@ main {
     justify-content: start;
     width: 300px;
     height: 500px;
+    margin-bottom: 80px;
     border-radius: 40px;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s;
@@ -385,8 +394,8 @@ main {
 }
 
 .project img {
-    max-width: 100%;
-    max-height: 40%;
+    min-width: 100%;
+    height: 148px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
 }
@@ -405,6 +414,14 @@ main {
 .project-link {
     max-height: 20%;
     width: 100%;
+}
+
+.project-link a {
+    margin: 0 auto;
+}
+
+#downloader h3 {
+    font-size: 1.6rem;
 }
 
 /*-------------------------------------------------------*/
@@ -660,6 +677,9 @@ main {
     #projects h2 {
         margin-bottom: 10px;
         margin-top: 10px;
+    }
+    #projects h3 {
+        font-size: 1.6rem;
     }
     .project-containers {
         padding: 50px;

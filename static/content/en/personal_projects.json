@@ -1,14 +1,48 @@
 {
+    "heading": "Personal Projects",
+    "id": "personal-projects",
     "projects": [
         {
-            "id": "banking",
-            "name": "Mock-Banking-App",
-            "short_description": "Mock Banking App short description"
+            "id": "website",
+            "name": "Website",
+            "short_description": "This very website you are looking at right now. This is honestly one of my proudest achievements.",
+            "img_source": "img/cv-website.png",
+            "gitlab": "https://gitlab.tomkeilers.com/ic34umer/cv-website",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
+
         },
         {
             "id": "downloader",
-            "name": "Video-Downloader",
-            "short_description": "FAU Video Downloader short description"
+            "name": "FAU-Lecture-Downloader",
+            "short_description": "A simple CLI tool to download lectures and content in general from our university's video platform through web scraping.",
+            "img_source": "img/fau-lecture-downloader.png",
+            "gitlab": "https://gitlab.tomkeilers.com/ic34umer/fau-lecture-downloader",
+            "skills": [
+                "icons/python.svg",
+                "icons/git.svg"
+            ]
+        },
+        {
+            "id": "banking",
+            "name": "Mock-Banking-App-V3",
+            "short_description": "Simple Banking Web Application. Coming Soon TM.",
+            "img_source": "img/banking.png",
+            "gitlab": "",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
         }
     ]
 }

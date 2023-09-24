@@ -1,5 +1,6 @@
 import json
 import subprocess
+from typing import Tuple
 from flask import Flask, render_template, url_for, redirect, request
 app = Flask(__name__)
 
@@ -10,19 +11,37 @@ def read_json(path: str) -> dict:
 def send_mail(mail_data: list) -> None:
     subprocess.run(["bash", "/app/send.sh", mail_data[0], mail_data[1], mail_data[2]])
 
+def set_en_projects() -> list:
+
+    projects = []
+
+    if not DEBUG:
+        projects.append(read_json("/app/static/content/en/work_projects.json"))
+        projects.append(read_json("/app/static/content/en/personal_projects.json"))
+        return projects
+
+    projects.append(read_json("/Users/tom/projects/cv-website/static/content/en/work_projects.json"))
+    projects.append(read_json("/Users/tom/projects/cv-website/static/content/en/personal_projects.json"))
+    return projects
+
+def set_en_about() -> Tuple[list, str]:
+    about_list = []
+    if not DEBUG:
+        about_dict = read_json("/app/static/content/en/about.json")
+    else:
+        about_dict = read_json("/Users/tom/projects/cv-website/static/content/en/about.json")
+
+    for item in about_dict.values():
+        about_list.append(item)
+    return about_list, about_dict["heading"]
+
+
 @app.route("/")
 @app.route("/en")
 def en():
-    work_projects = read_json("/app/static/content/en/work_projects.json")["projects"]
-    # work_projects = read_json("/Users/tom/projects/cv-website/static/content/en/work_projects.json")["projects"]
-
-    personal_projects = read_json("/app/static/content/en/personal_projects.json")["projects"]
-    # personal_projects = read_json("/Users/tom/projects/cv-website/static/content/en/personal_projects.json")["projects"]
-
-    university_projects = read_json("/app/static/content/en/uni_projects.json")["projects"]
-    # university_projects = read_json("/Users/tom/projects/cv-website/static/content/en/uni_projects.json")["projects"]
-
-    return render_template("home.html", language="en", work_projects=work_projects, personal_projects=personal_projects, university_projects=university_projects)
+    projects = set_en_projects()
+    about_list, heading = set_en_about()
+    return render_template("home.html", language="en", project_lists=projects, about_heading=heading, about_p=about_list)
 
 @app.route("/de")
 def de():
@@ -44,4 +63,5 @@ def contact():
     return redirect("/en")
 
 if __name__ == "__main__":
+    DEBUG = True
     app.run(host="0.0.0.0", port=5001, debug=True)

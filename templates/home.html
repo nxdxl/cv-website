@@ -1,12 +1,11 @@
-{% extends "layout_new.html" %}
+{% extends "layout.html" %}
 {% block home %}
 
 <div id="about" class="section flex-center">
     <div id="about-content">
-        <h1>Hey, I'm Tom</h1>
-        <p>I am currently enrolled in Computer Science at the <a href="https://fau.de" target="_blank">Friedrich-Alexander-Univerity</a> as a full time student.</p>
-        <p>I also work at <a href="https://walaris.com" target="_blank">Walaris</a> as a Software Developer.</p>
-        <p>I have a passion for learning new things and meeting incredible people!</p>
+        <h1>{{ about_heading }}</h1>
+        <p>{{ about_p[0] }} <a href="https://fau.de" target="_blank">Friedrich-Alexander-University</a> {{ about_p[1] }} <a href="https://walaris.com" target="_blank">Walaris</a> {{ about_p[2] }}</p>
+        <p>{{ about_p[3] }}</p>
     </div>
     <div id="about-menu">
         <ul>
@@ -19,9 +18,11 @@
 </div>
 <div id="projects" class="section flex-center">
     <h1 id="projects-heading">Projects</h1>
-    <h2>Work Projects</h2>
-    <div id="work-projects" class="project-containers flex-center">
-        {% for project in work_projects %}
+
+    {% for project_list in project_lists %}
+    <h2> {{ project_list['heading'] }} </h2>
+    <div id="{{ project_list['id'] }}" class="project-containers flex-center">
+        {% for project in project_list['projects'] %}
         <div id="{{ project['id'] }}" class="project flex-center">
             <img src="{{ url_for('static', filename=project['img_source']) }}" alt="{{ project['name'] }}_Image">
             <div class="used-skills">
@@ -37,32 +38,15 @@
             </div>
             <div class="project-link flex-center">
                 <a href="">Read More</a>
+                {% if project['gitlab'] %}
+                <a href="{{ project['gitlab'] }}" target="_blank">GitLab</a>
+                {% endif %}
             </div>
         </div>
         {% endfor %}
     </div>
-    <h2>Personal Projects</h2>
-    <div id="personal-projects" class="project-containers flex-center">
-        {% for project in personal_projects %}
-        <div id="{{ project['id'] }}" class="project flex-center">
-            <img src="{{ url_for('static', filename=project['img_source']) }}" alt="{{ project['name'] }}_Image">
-            <div class="used-skills">
-                <ul class="flex-center">
-                    {% for skill in project["skills"] %}
-                    <li><img src="{{ url_for('static', filename=skill) }}" alt={{ skill }}></li>
-                    {% endfor %}
-                </ul>
-            </div>
-            <div class="project-text flex-center">
-                <h3>{{ project['name'] }}</h3>
-                <p>{{ project['short_description'] }}</p>
-            </div>
-            <div class="project-link flex-center">
-                <a href="">Read More</a>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    {% endfor %}
+
 </div>
 <div id="skills" class="section flex-center">
     <h1>Skills</h1>
