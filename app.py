@@ -3,6 +3,7 @@ import subprocess
 from typing import Tuple
 from flask import Flask, render_template, url_for, redirect, request
 app = Flask(__name__)
+DEBUG = False
 
 def read_json(path: str) -> dict:
     with open(path, "r") as json_file:
