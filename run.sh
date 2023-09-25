@@ -2,7 +2,9 @@
 docker run \
     --restart unless-stopped \
     -d \
+    -e FROM_ADDRESS=ADDRESS \
+    -e TO_ADDRESS=ADDRESS \
+    -e PASSWORD=PASSWORD \
     -p 8081:8000 \
-    -v /home/walkinggiraffe/server/mail-server/mail_pipe:/app/mail_pipe \
     --name cv-website \
     cv-website
