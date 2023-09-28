@@ -224,7 +224,7 @@ a:hover {
 
 #nav-socials {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     list-style: none;
     margin: 0;
     padding: 0;
@@ -259,6 +259,51 @@ a:hover {
 #menu-list-language-selector img {
     width: 30px;
     height: 30px;
+}
+
+#top-menu-language {
+    color: var(--ctp-mocha-blue);
+    transition: color 0.2s ease;
+    z-index: 1010;
+}
+
+#top-menu-language:hover {
+    color: var(--ctp-latte-blue);
+    cursor: pointer;
+}
+
+.hidden {
+    position: absolute;
+    top: -200%;
+    z-index: -1;
+}
+
+.show {
+    position: fixed;
+    top: 5rem;
+}
+
+#top-language-container {
+    background-color: var(--ctp-mocha-crust);
+    margin-left: -11px;
+    transition: top 0.3s ease;
+}
+
+#top-language-container img {
+    width: 30px;
+    height: 30px;
+}
+
+#top-language-container ul {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#top-language-container li {
+    padding-bottom: 10px;
 }
 
 /*-------------------------------------------------------*/
