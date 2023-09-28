@@ -1,0 +1,48 @@
+{
+    "heading": "Eigene Projekte",
+    "id": "personal-projects",
+    "projects": [
+        {
+            "id": "website",
+            "name": "Website",
+            "short_description": "Die Website auf der Du dich gerade befindest. Eines meiner komplexeren Projekte.",
+            "img_source": "img/cv-website.png",
+            "gitlab": "https://gitlab.tomkeilers.com/ic34umer/cv-website",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
+
+        },
+        {
+            "id": "downloader",
+            "name": "Vorlesungs-Downloader",
+            "short_description": "Ein simples CLI tool, um Vorlesungen von der offiziellen Seite der FAU runter zu laden.",
+            "img_source": "img/fau-lecture-downloader.png",
+            "gitlab": "https://gitlab.tomkeilers.com/ic34umer/fau-lecture-downloader",
+            "skills": [
+                "icons/python.svg",
+                "icons/git.svg"
+            ]
+        },
+        {
+            "id": "banking",
+            "name": "Mock-Banking-App-V3",
+            "short_description": "Simple Banking Web Application. Coming Soon TM.",
+            "img_source": "img/banking.png",
+            "gitlab": "",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
+        }
+    ]
+}

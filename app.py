@@ -4,6 +4,7 @@ from helper.mailer import Mailer
 
 app = Flask(__name__)
 DEBUG = False
+
 content_provider = ContentProvider(DEBUG)
 mailer = Mailer()
 
@@ -14,7 +15,7 @@ def en():
 
 @app.route("/de")
 def de():
-    return render_template("home.html")
+    return content_provider.language_site("de")
 
 @app.route("/jp")
 def jp():

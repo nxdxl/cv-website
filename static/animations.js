@@ -109,3 +109,19 @@ document.addEventListener("click", function(event) {
         x_to_burger();
     }
 });
+
+top_menu_language = document.getElementById("top-menu-language");
+menu_list_language = document.getElementById("menu-list-language");
+
+top_menu_language.addEventListener("click", () => {
+
+});
+
+menu_list_language.addEventListener("click", () => {
+
+});
+
+
+
+
+

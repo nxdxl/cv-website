@@ -4,7 +4,7 @@
     "projects": [
         {
             "id": "adsb",
-            "name": "Adsb-インタフェース",
+            "name": "ADSB-インタフェース",
             "short_description": "飛行機の ADSB 通信を解読し、そのデーターによりカメラを飛行機に整列するためのプログラム。",
             "img_source": "img/plane-bounding-box.png",
             "skills": [

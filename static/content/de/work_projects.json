@@ -1,11 +1,11 @@
 {
-    "heading": "Work Projects",
+    "heading": "Arbeitsprojekte",
     "id": "work-projects",
     "projects": [
         {
             "id": "adsb",
             "name": "ADSB-Interface",
-            "short_description": "A simple program for handling ADSB signals from planes using Python and C with standard and external libraries.",
+            "short_description": "Ein Programm um ADSB Signale von Flugzeugen zu dekodieren und basierend auf den Daten zu agieren. Python und C; externe und interne Libraries",
             "img_source": "img/plane-bounding-box.png",
             "skills": [
                 "icons/python.svg",
@@ -17,7 +17,7 @@
         {
             "id": "pipeline",
             "name": "Data-Pipeline",
-            "short_description": "A pipeline which enables data transfer through a proxy from our clients to us. Synchronisation is handled with Rsync.",
+            "short_description": "Eine Pipeline um einen sicheren Datentransfer aus dem Ausland zu gewährleisten. Synchronisation geschieht durch Rsync.", 
             "img_source": "img/client-data.png",
             "skills": [
                 "icons/python.svg",
