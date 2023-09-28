@@ -111,9 +111,11 @@ document.addEventListener("click", function(event) {
 });
 
 top_menu_language = document.getElementById("top-menu-language");
+top_language_container = document.getElementById("top-language-container");
 
 top_menu_language.addEventListener("click", () => {
-    
+    top_language_container.classList.toggle("hidden");
+    top_language_container.classList.toggle("show");
 });
 
 

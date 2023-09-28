@@ -275,7 +275,7 @@ a:hover {
 .hidden {
     position: absolute;
     top: -200%;
-    z-index: -1;
+    z-index: -1000;
 }
 
 .show {
