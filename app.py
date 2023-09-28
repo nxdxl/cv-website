@@ -1,15 +1,14 @@
 import json
 import subprocess
-from typing import Tuple
-from flask import Flask, render_template, url_for, redirect, request
 import smtplib
 import os
+from typing import Tuple
+from flask import Flask, render_template, url_for, redirect, request
+from content import ContentProvider
+
 app = Flask(__name__)
 DEBUG = False
-
-def read_json(path: str) -> dict:
-    with open(path, "r") as json_file:
-        return json.load(json_file)
+content_provider = ContentProvider(DEBUG)
 
 def send_mail(mail_data: dict) -> bool:
     from_address = os.environ.get("FROM_ADDRESS")
@@ -33,37 +32,10 @@ def send_mail(mail_data: dict) -> bool:
         return True
 
 
-def set_en_projects() -> list:
-
-    projects = []
-
-    if not DEBUG:
-        projects.append(read_json("/app/static/content/en/work_projects.json"))
-        projects.append(read_json("/app/static/content/en/personal_projects.json"))
-        return projects
-
-    projects.append(read_json("/Users/tom/projects/cv-website/static/content/en/work_projects.json"))
-    projects.append(read_json("/Users/tom/projects/cv-website/static/content/en/personal_projects.json"))
-    return projects
-
-def set_en_about() -> Tuple[list, str]:
-    about_list = []
-    if not DEBUG:
-        about_dict = read_json("/app/static/content/en/about.json")
-    else:
-        about_dict = read_json("/Users/tom/projects/cv-website/static/content/en/about.json")
-
-    for item in about_dict.values():
-        about_list.append(item)
-    return about_list, about_dict["heading"]
-
-
 @app.route("/")
 @app.route("/en")
 def en():
-    projects = set_en_projects()
-    about_list, heading = set_en_about()
-    return render_template("home.html", project_lists=projects, about_heading=heading, about_p=about_list)
+    return content_provider.language_site("en")
 
 @app.route("/de")
 def de():
@@ -71,7 +43,7 @@ def de():
 
 @app.route("/jp")
 def jp():
-    return render_template("home.html")
+    return content_provider.language_site("jp")
 
 @app.route("/en/projects/website")
 def website():
@@ -102,4 +74,5 @@ def contact():
 
 if __name__ == "__main__":
     DEBUG = True
+    content_provider = ContentProvider(DEBUG)
     app.run(host="0.0.0.0", port=5001, debug=True)

@@ -1,0 +1,32 @@
+{
+    "heading": "仕事プロジェクト",
+    "id": "work-projects",
+    "projects": [
+        {
+            "id": "adsb",
+            "name": "Adsb-インタフェース",
+            "short_description": "飛行機の ADSB 通信を解読し、そのデーターによりカメラを飛行機に整列するためのプログラム。",
+            "img_source": "img/plane-bounding-box.png",
+            "skills": [
+                "icons/python.svg",
+                "icons/c.svg",
+                "icons/docker.svg",
+                "icons/git.svg"
+            ]
+        },
+        {
+            "id": "pipeline",
+            "name": "データーパイプライン",
+            "short_description": "クライエントの持つデーターを安全に異国からドイツ内のサーバーに移転させるためのパイプライン。",
+            "img_source": "img/client-data.png",
+            "skills": [
+                "icons/python.svg",
+                "icons/docker.svg",
+                "icons/flask.svg",
+                "icons/git.svg",
+                "icons/html.svg",
+                "icons/css.svg"
+            ]
+        }
+    ]
+}

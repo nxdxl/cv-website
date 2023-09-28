@@ -9,15 +9,15 @@
     </div>
     <div id="about-menu">
         <ul>
-            <li class="menu-list-item"><div id="about-menu-button" class="menu-div flex-center">About</div></li>
-            <li class="menu-list-item"><div id="projects-menu-button" class="menu-div flex-center">Projects</div></li>
-            <li class="menu-list-item"><div id="skills-menu-button" class="menu-div flex-center">Skills</div></li>
-            <li class="menu-list-item"><div id="contact-menu-button" class="menu-div flex-center">Contact</div></li>
+            <li class="menu-list-item"><div id="about-menu-button" class="menu-div flex-center">{{ menu["about"] }}</div></li>
+            <li class="menu-list-item"><div id="projects-menu-button" class="menu-div flex-center">{{ menu["projects"] }}</div></li>
+            <li class="menu-list-item"><div id="skills-menu-button" class="menu-div flex-center">{{ menu["skills"] }}</div></li>
+            <li class="menu-list-item"><div id="contact-menu-button" class="menu-div flex-center">{{ menu["contact"] }}</div></li>
         </ul>
     </div>
 </div>
 <div id="projects" class="section flex-center">
-    <h1 id="projects-heading">Projects</h1>
+    <h1 id="projects-heading">{{ headings["projects"] }}</h1>
 
     {% for project_list in project_lists %}
     <h2> {{ project_list['heading'] }} </h2>
@@ -49,7 +49,7 @@
 
 </div>
 <div id="skills" class="section flex-center">
-    <h1>Skills</h1>
+    <h1>{{ headings["skills"] }}</h1>
     <div id="badges" class="flex-center">
         <div id="good">
             <ul>
@@ -74,20 +74,20 @@
     </div>
 </div>
 <div id="contact" class="section flex-center">
-    <h1 id="contact-heading">Contact Me</h1>
-    <p>Hey, let's talk! Send me a message through this form, or directly to <a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>. <br/> I am looking forward to hearing from you!</p>
+    <h1 id="contact-heading">{{ headings["contact"] }}</h1>
+    <p>{{ contact_form['one'] }}<a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>{{ contact_form['dot'] }}<br/></p>{{ contact_form['two'] }}
     <form action="/contact#contact" method="POST" class="flex-center" id="contact-form">
-        <label for="name">Name:</label>
+        <label for="name">{{ contact_form['name'] }}</label>
         <input type="text" id="name" name="name">
 
-        <label for="email">Email:</label>
+        <label for="email">{{ contact_form['mail'] }}</label>
         <input type="text" id="email" name="email">
 
-        <label for="message">Your Message:</label>
+        <label for="message">{{ contact_form['message'] }}</label>
         <textarea type="text" id="message" name="message"></textarea>
 
         <div id="submit-button" class="flex-center">
-            <p>Submit</p>
+            <p>{{ contact_form['submit'] }}</p>
         </div>
     </form>
 </div>

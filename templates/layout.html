@@ -16,10 +16,10 @@
             <div id="header-wrapper" class="immutable-bar flex-center">
                 <div id="top-menu-container" class="flex-center menu-bar">
                     <ul id="top-menu-list" class="flex-center">
-                        <li class="menu-list-item"><a href="#">About</a></li>
-                        <li class="menu-list-item"><a href="#projects">Projects</a></li>
-                        <li class="menu-list-item"><a href="#skills">Skills</a></li>
-                        <li class="menu-list-item"><a href="#contact">Contact</a></li>
+                        <li class="menu-list-item"><a href="#">{{ menu["about"] }}</a></li>
+                        <li class="menu-list-item"><a href="#projects">{{ menu["projects"] }}</a></li>
+                        <li class="menu-list-item"><a href="#skills">{{ menu["skills"] }}</a></li>
+                        <li class="menu-list-item"><a href="#contact">{{ menu["contact"] }}</a></li>
                     </ul>
                 </div>
                 <div id="top-icon-container" class="flex-center">
@@ -44,10 +44,10 @@
 
 
             <ul id="nav-list" class="inactive">
-                <li id="about-menu-button-two"><a href="#">About</a></li>
-                <li id="projects-menu-button-two"><a href="#projects">Projects</a></li>
-                <li id="skills-menu-button-two"><a href="#skills">Skills</a></li>
-                <li id="contact-menu-button-two"><a href="#contact">Contact</a></li>
+                <li id="about-menu-button-two"><a href="#">{{ menu["about"] }}</a></li>
+                <li id="projects-menu-button-two"><a href="#projects">{{ menu["projects"] }}</a></li>
+                <li id="skills-menu-button-two"><a href="#skills">{{ menu["skills"] }}</a></li>
+                <li id="contact-menu-button-two"><a href="#contact">{{ menu["contact"] }}</a></li>
                 <li>
                     <div id="nav-socials">
                         <a href="https://www.linkedin.com/in/tom-keilers-9b7802151/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -71,17 +71,17 @@
             <div id="footer-wrapper" class="immutable-bar flex-center">
                 <div id="love" class="flex-center">
                     <div id=p-container>
-                        <p>Made with ❤️ by Tom Keilers.</p>
-                        <p>I also want to thank the <a href="https://github.com/catppuccin" target="_blank">Catppuccin</a> community for designing this amazing color palatte, and the <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a> community for designing and providing amazing icons. </p>
-                        <p>Also many thanks to <a target="_blank" href="https://icons8.com">Icons8</a> for providing Icons for my skills!</p>
+                        <p>{{ footer["love"] }}</p>
+                        <p>{{ footer["gratitude"][0] }}<a href="https://github.com/catppuccin" target="_blank">Catppuccin</a>{{ footer["gratitude"][1] }}<a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>{{ footer["gratitude"][2] }}</p>
+                        <p>{{ footer["pthree"][0] }}<a target="_blank" href="https://icons8.com">Icons8</a>{{ footer["pthree"][1] }}</p>
                     </div>
                 </div>
                 <div id="bottom-menu-container" class="flex-center">
                     <ul class="flex-center">
-                        <li class="bottom-menu-list-item"><a href="#">About</a></li>
-                        <li class="bottom-menu-list-item"><a href="#projects">Projects</a></li>
-                        <li class="bottom-menu-list-item"><a href="#skills">Skills</a></li>
-                        <li class="bottom-menu-list-item"><a href="#contact">Contact</a></li>
+                        <li class="bottom-menu-list-item"><a href="#">{{ menu["about"] }}</a></li>
+                        <li class="bottom-menu-list-item"><a href="#projects">{{ menu["projects"] }}</a></li>
+                        <li class="bottom-menu-list-item"><a href="#skills">{{ menu["skills"] }}</a></li>
+                        <li class="bottom-menu-list-item"><a href="#contact">{{ menu["contact"] }}</a></li>
                     </ul>
                 </div>
             </div>

@@ -149,7 +149,7 @@ a:hover {
 }
 
 #home {
-    height: calc(5rem + 5px);
+    height: calc(5rem + 9px);
 }
 
 .top-nav {
@@ -267,6 +267,8 @@ main {
     margin-bottom: 2rem;
     padding: 20px;
     max-width: 720px;
+    width: 100%;
+    overflow-wrap: break-word;
 }
 
 /*-------------------------------------------------------*/
@@ -575,6 +577,11 @@ main {
     min-width: 0px;
 }
 
+#main-content {
+    margin-top: 0;
+    padding: 0;
+}
+
 /*-------------------------------------------------------*/
 /*-------------------Projects read more------------------*/
 /*-------------------------------------------------------*/
@@ -772,6 +779,9 @@ main {
         }
         #home {
             display: none;
+        }
+        #video-container {
+            margin-top: 5rem;
         }
     }
 }
