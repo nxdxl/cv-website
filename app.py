@@ -1,36 +1,11 @@
-import json
-import subprocess
-import smtplib
-import os
-from typing import Tuple
 from flask import Flask, render_template, url_for, redirect, request
-from content import ContentProvider
+from helper.content_provider import ContentProvider
+from helper.mailer import Mailer
 
 app = Flask(__name__)
 DEBUG = False
 content_provider = ContentProvider(DEBUG)
-
-def send_mail(mail_data: dict) -> bool:
-    from_address = os.environ.get("FROM_ADDRESS")
-    to_address = os.environ.get("TO_ADDRESS")
-    password = os.environ.get("PASSWORD")
-
-    message = f"From: {from_address}\r\nTo: {to_address}\r\nSubject: Message from website\r\n\r\nName: {mail_data['name']}\nE-Mail: {mail_data['email']}\nMessage: {mail_data['message']}"
-
-    smtp_obj = smtplib.SMTP("smtp.mail.me.com", 587)
-    smtp_obj.starttls()
-    smtp_obj.login(from_address, password)
-
-    try:
-        send_status = smtp_obj.sendmail(from_addr=from_address, to_addrs=to_address, msg=message)
-        if send_status != {}:
-            print("There was a problem sending the email.")
-            return False
-
-    finally:
-        smtp_obj.quit()
-        return True
-
+mailer = Mailer()
 
 @app.route("/")
 @app.route("/en")
@@ -62,14 +37,13 @@ def banking():
 
 @app.route("/contact", methods=["POST"])
 def contact():
-    data = {}
-    data["name"] = request.form["name"]
-    data["email"] = request.form["email"]
-    data["message"] = request.form["message"]
-    
-    if send_mail(data):
-        return redirect("/en")
+    name = request.form["name"]
+    email = request.form["email"]
+    message = request.form["message"]
 
+    if mailer.send_mail(name, email, message):
+        return redirect("/en")
+    
     return redirect("/error")
 
 if __name__ == "__main__":

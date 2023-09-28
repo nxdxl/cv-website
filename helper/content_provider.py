@@ -1,6 +1,7 @@
 from typing import Tuple
 from flask import render_template
 import json
+
 class ContentProvider:
 
     def __init__(self, DEBUG: bool) -> None:
