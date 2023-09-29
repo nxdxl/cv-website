@@ -1,7 +1,7 @@
-const about = document.getElementById("home");
-const projects = document.getElementById("projects");
-const skills = document.getElementById("skills");
-const contact = document.getElementById("contact");
+const about = document.getElementById("top");
+const projects = document.getElementById("projects-top");
+const skills = document.getElementById("skills-top");
+const contact = document.getElementById("contact-top");
 
 const about_button = document.getElementById("about-menu-button");
 const projects_button = document.getElementById("projects-menu-button");

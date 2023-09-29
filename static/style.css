@@ -832,6 +832,9 @@ main {
         overflow-x: scroll;
         scroll-padding: 2rem;
     }
+    .project {
+        margin-bottom: 0px;
+    }
 }
 
 @media (max-width: 610px) {

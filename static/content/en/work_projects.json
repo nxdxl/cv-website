@@ -5,7 +5,7 @@
         {
             "id": "adsb",
             "name": "ADSB-Interface",
-            "short_description": "A simple program for handling ADSB signals from planes using Python and C with standard and external libraries.",
+            "short_description": "A simple program for decoding ADSB signals from planes and acting on them depending on the data. Written in Python and C.",
             "img_source": "img/plane-bounding-box.png",
             "skills": [
                 "icons/python.svg",
@@ -17,7 +17,7 @@
         {
             "id": "pipeline",
             "name": "Data-Pipeline",
-            "short_description": "A pipeline which enables data transfer through a proxy from our clients to us. Synchronisation is handled with Rsync.",
+            "short_description": "A pipeline which enables secure data transfer from overseas to German servers. Synchronisation is handled with Rsync.",
             "img_source": "img/client-data.png",
             "skills": [
                 "icons/python.svg",

@@ -15,8 +15,8 @@
                 "icons/git.svg",
                 "icons/html.svg",
                 "icons/css.svg"
-            ]
-
+            ],
+            "read_more": "True"
         },
         {
             "id": "downloader",
@@ -27,22 +27,8 @@
             "skills": [
                 "icons/python.svg",
                 "icons/git.svg"
-            ]
-        },
-        {
-            "id": "banking",
-            "name": "Mock-Banking-App-V3",
-            "short_description": "Simple Banking Web Application. Coming Soon TM.",
-            "img_source": "img/banking.png",
-            "gitlab": "",
-            "skills": [
-                "icons/python.svg",
-                "icons/docker.svg",
-                "icons/flask.svg",
-                "icons/git.svg",
-                "icons/html.svg",
-                "icons/css.svg"
-            ]
+            ],
+            "read_more": "True"
         }
     ]
 }

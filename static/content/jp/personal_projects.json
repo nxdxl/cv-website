@@ -15,8 +15,8 @@
                 "icons/git.svg",
                 "icons/html.svg",
                 "icons/css.svg"
-            ]
-
+            ],
+            "read_more": "True"
         },
         {
             "id": "downloader",
@@ -27,22 +27,8 @@
             "skills": [
                 "icons/python.svg",
                 "icons/git.svg"
-            ]
-        },
-        {
-            "id": "banking",
-            "name": "模擬銀行アプリ-V3",
-            "short_description": "銀行っぽい模擬ウェブアプリケーション。仕掛品。",
-            "img_source": "img/banking.png",
-            "gitlab": "",
-            "skills": [
-                "icons/python.svg",
-                "icons/docker.svg",
-                "icons/flask.svg",
-                "icons/git.svg",
-                "icons/html.svg",
-                "icons/css.svg"
-            ]
+            ],
+            "read_more": "True"
         }
     ]
 }

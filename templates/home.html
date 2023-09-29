@@ -18,6 +18,7 @@
         </ul>
     </div>
 </div>
+<a id="projects-top"></a>
 <div id="projects" class="section flex-center">
     <h1 id="projects-heading">{{ headings["projects"] }}</h1>
 
@@ -39,7 +40,9 @@
                 <p>{{ project['short_description'] }}</p>
             </div>
             <div class="project-link flex-center">
+                {% if project['read_more'] %}
                 <a href="">Read More</a>
+                {% endif %}
                 {% if project['gitlab'] %}
                 <a href="{{ project['gitlab'] }}" target="_blank">GitLab</a>
                 {% endif %}
@@ -50,6 +53,7 @@
     {% endfor %}
 
 </div>
+<a id="skills-top"></a>
 <div id="skills" class="section flex-center">
     <h1>{{ headings["skills"] }}</h1>
     <div id="badges" class="flex-center">
@@ -75,6 +79,7 @@
         </div>
     </div>
 </div>
+<a id="contact-top"></a>
 <div id="contact" class="section flex-center">
     <h1 id="contact-heading">{{ headings["contact"] }}</h1>
     <p>{{ contact_form['one'] }}<a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>{{ contact_form['dot'] }}<br/></p>{{ contact_form['two'] }}

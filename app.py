@@ -42,8 +42,15 @@ def contact(language: str):
     email = request.form["email"]
     message = request.form["message"]
 
-    if not Mailer.check_validity(email) or not name or not message:
-        print(email)
+    if not mailer.check_timer():
+        # need to make a special rate limit pop up
+        mailer.add_rate_limit()
+        return redirect(f"/{language}/error")
+
+    print("TIMER:", mailer.time_restriction, mailer.timer)
+    mailer.start_timer()
+
+    if not mailer.check_validity(email) or not name or not message:
         return redirect(f"/{language}/error")
 
     if mailer.send_mail(name, email, message):

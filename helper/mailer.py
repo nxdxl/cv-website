@@ -1,6 +1,7 @@
 import os
 import smtplib
 import re
+import time
 
 class EMailException(Exception):
     """
@@ -9,10 +10,15 @@ class EMailException(Exception):
 
 class Mailer:
     
-    def __init__(self) -> bool:
-        self.from_address = os.environ.get("FROM_ADDRESS")
-        self.to_address = os.environ.get("TO_ADDRESS")
-        self.password = os.environ.get("PASSWORD")
+    def __init__(self) -> None:
+        # self.from_address = os.environ.get("FROM_ADDRESS")
+        # self.to_address = os.environ.get("TO_ADDRESS")
+        # self.password = os.environ.get("PASSWORD")
+        self.from_address = "tom.keilers@icloud.com"
+        self.to_address = "info@tomkeilers.com"
+        self.password = "lyzd-xmzu-oakk-nrbz"
+        self.time_restriction = 60
+        self.timer = 0
 
     def send_mail(self, name: str, email: str, message: str) -> None:
         
@@ -35,10 +41,22 @@ class Mailer:
             return True
 
     
-    def check_validity(email: str) -> bool:
+    def check_validity(self, email: str) -> bool:
         pattern = r"^\S+@\S+\.\S+$"
 
         if re.match(pattern, email):
             return True
 
         return False
+
+
+    def start_timer(self) -> None:
+        self.timer = time.time()
+
+    
+    def check_timer(self) -> bool:
+        return (time.time() - self.timer) > self.time_restriction
+
+
+    def add_rate_limit(self) -> None:
+        self.time_restriction += 60
