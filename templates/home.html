@@ -1,6 +1,8 @@
 {% extends "layout.html" %}
 {% block home %}
 
+{% block mail_result %}{% endblock %}
+
 <div id="about" class="section flex-center">
     <div id="about-content">
         <h1>{{ about_heading }}</h1>
@@ -76,7 +78,7 @@
 <div id="contact" class="section flex-center">
     <h1 id="contact-heading">{{ headings["contact"] }}</h1>
     <p>{{ contact_form['one'] }}<a href="mailto:info@tomkeilers.com">info@tomkeilers.com</a>{{ contact_form['dot'] }}<br/></p>{{ contact_form['two'] }}
-    <form action="/contact#contact" method="POST" class="flex-center" id="contact-form">
+    <form action="/{{ language }}/contact#contact" method="POST" class="flex-center" id="contact-form">
         <label for="name">{{ contact_form['name'] }}</label>
         <input type="text" id="name" name="name">
 
@@ -86,9 +88,7 @@
         <label for="message">{{ contact_form['message'] }}</label>
         <textarea type="text" id="message" name="message"></textarea>
 
-        <div id="submit-button" class="flex-center">
-            <p>{{ contact_form['submit'] }}</p>
-        </div>
+        <input type="submit" name="submit" value="{{ contact_form['submit'] }}" id="submit-button">
     </form>
 </div>
 

@@ -1,10 +1,3 @@
-const submit_button = document.getElementById("submit-button");
-const contact_form = document.getElementById("contact-form");
-
-submit_button.addEventListener("click", () => {
-    contact_form.submit();
-});
-
 const about = document.getElementById("home");
 const projects = document.getElementById("projects");
 const skills = document.getElementById("skills");

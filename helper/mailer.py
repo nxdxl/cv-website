@@ -1,5 +1,6 @@
 import os
 import smtplib
+import re
 
 class EMailException(Exception):
     """
@@ -26,11 +27,18 @@ class Mailer:
             if send_status != {}:
                 raise EMailException("There was an error sending the email")
 
-            return True
-
         except Exception:
             return False
 
         finally:
             smtp_obj.quit()
             return True
+
+    
+    def check_validity(email: str) -> bool:
+        pattern = r"^\S+@\S+\.\S+$"
+
+        if re.match(pattern, email):
+            return True
+
+        return False
