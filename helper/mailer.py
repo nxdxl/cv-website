@@ -11,12 +11,9 @@ class EMailException(Exception):
 class Mailer:
     
     def __init__(self) -> None:
-        # self.from_address = os.environ.get("FROM_ADDRESS")
-        # self.to_address = os.environ.get("TO_ADDRESS")
-        # self.password = os.environ.get("PASSWORD")
-        self.from_address = "tom.keilers@icloud.com"
-        self.to_address = "info@tomkeilers.com"
-        self.password = "lyzd-xmzu-oakk-nrbz"
+        self.from_address = os.environ.get("FROM_ADDRESS")
+        self.to_address = os.environ.get("TO_ADDRESS")
+        self.password = os.environ.get("PASSWORD")
         self.time_restriction = 60
         self.timer = 0
 
@@ -55,5 +52,6 @@ class Mailer:
 
     
     def check_timer(self) -> bool:
+        # TODO this is currently checking based on server time. Need to find a way to make this check for client time
         return (time.time() - self.timer) > self.time_restriction
 
