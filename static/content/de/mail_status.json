@@ -1,0 +1,7 @@
+{
+    "success": "Your mail was successfully sent!",
+    "error": [
+        "There was an error sending your mail.",
+        " Have you checked that your email address is valid?"
+    ]
+}

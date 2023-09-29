@@ -54,8 +54,12 @@ class ContentProvider:
     def _read_footer(self, language: str) -> dict:
         return self._read_content("footer", language)
 
+
+    def _read_mail_status(self, language: str) -> dict:
+        return self._read_content("mail_status", language)
+
     
-    def language_site(self, page: str, language: str, mail_result: str=None) -> str:
+    def language_site(self, page: str, language: str, mail_result: bool) -> str:
         page=page+".html"
         projects = self._read_projects(language)
         about_list, heading = self._read_about(language)
@@ -63,5 +67,6 @@ class ContentProvider:
         headings = self._read_headings(language)
         contact_form = self._read_contact_form(language)
         footer = self._read_footer(language)
+        mail_status = self._read_mail_status(language)
 
-        return render_template(page, menu=menu, language=language, project_lists=projects, about_heading=heading, about_p=about_list, headings=headings, contact_form=contact_form, footer=footer, mail_result=mail_result)
+        return render_template(page, menu=menu, language=language, project_lists=projects, about_heading=heading, about_p=about_list, headings=headings, contact_form=contact_form, footer=footer, mail_result=mail_result, mail_status=mail_status)

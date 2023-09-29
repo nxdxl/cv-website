@@ -639,8 +639,7 @@ main {
 
 .fade-out {
     animation-name: fade_out;
-    animation-duration: 4s;
-    /* animation-delay: 2s; */
+    animation-duration: 5s;
     animation-fill-mode: forwards;
 }
 

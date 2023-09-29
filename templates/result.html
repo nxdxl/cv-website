@@ -3,11 +3,11 @@
 
 {% if mail_result %}
 <div id="mail-success" class="flex-center mail-screen fade-out">
-    <p>Your mail was successfully sent!</p>
+    <p>{{ mail_status['success'] }}</p>
 </div>
 {% else %}
 <div id="mail-error" class="flex-center mail-screen fade-out">
-    <p>There was an error sending your mail.<br>Have you checked that your email address is valid?</p>
+    <p>{{ mail_status['error'][0] }}<br>{{ mail_status['error'][1] }}</p>
 </div>
 {% endif %}
 
