@@ -44,7 +44,7 @@ def contact(language: str):
 
     if not mailer.check_timer():
         # need to make a special rate limit pop up
-        mailer.add_rate_limit()
+        print("TIMER:", mailer.time_restriction, mailer.timer)
         return redirect(f"/{language}/error")
 
     print("TIMER:", mailer.time_restriction, mailer.timer)

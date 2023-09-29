@@ -57,6 +57,3 @@ class Mailer:
     def check_timer(self) -> bool:
         return (time.time() - self.timer) > self.time_restriction
 
-
-    def add_rate_limit(self) -> None:
-        self.time_restriction += 60
