@@ -1,7 +1,7 @@
 {
-    "success": "Your mail was successfully sent!",
+    "success": "Deine Mail wurde erfolgreich versand.",
     "error": [
-        "There was an error sending your mail.",
-        " Have you checked that your email address is valid?"
+        "Beim senden der Mail ist ein Fehler aufgetreten.",
+        " Hast du deine Mail-Adresse überprüft?"
     ]
 }
