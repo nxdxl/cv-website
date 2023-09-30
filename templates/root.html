@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block head_home %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/popup.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/root.css') }}">
+{% endblock head_home %}
+
+{% block popup %}
+
+<div id="language-picker" class="popup flex-center">
+    <p>Please choose your language.</p>
+    <ul class="flex-center">
+        <li><a href="/en" class="flex-center"><img src="{{ url_for('static', filename='icons/gb.svg') }}" alt="">English</a></li>
+        <li><a href="/de" class="flex-center"><img src="{{ url_for('static', filename='icons/de.svg') }}" alt="">Deutsch</a></li>
+        <li><a href="/jp" class="flex-center"><img src="{{ url_for('static', filename='icons/jp.svg') }}" alt="">日本語</a></li>
+    </ul>
+</div>
+
+{% endblock %}

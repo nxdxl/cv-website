@@ -1,7 +1,17 @@
 {% extends "layout.html" %}
+
+{% block head %}
+
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/media_querries.css') }}">
+
+{% block head_home %}{% endblock %}
+
+{% endblock head %}
+
 {% block home %}
 
-{% block mail_result %}{% endblock %}
+{% block popup %}{% endblock %}
 
 <div id="about" class="section flex-center">
     <div id="about-content">

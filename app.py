@@ -9,17 +9,15 @@ content_provider = ContentProvider(DEBUG)
 mailer = Mailer()
 
 @app.route("/")
-@app.route("/en")
-def en():
-    return content_provider.language_site("home", "en")
+def root():
+    return content_provider.language_site("root")
 
-@app.route("/de")
-def de():
-    return content_provider.language_site("home", "de")
+@app.route("/<language>")
+def home(language: str):
+    if language != "en" and language != "de" and language != "jp":
+        return redirect("/")
 
-@app.route("/jp")
-def jp():
-    return content_provider.language_site("home", "jp")
+    return content_provider.language_site("home", language=language)
 
 @app.route("/en/projects/website")
 def website():
@@ -44,10 +42,8 @@ def contact(language: str):
 
     if not mailer.check_timer():
         # need to make a special rate limit pop up
-        print("TIMER:", mailer.time_restriction, mailer.timer)
         return redirect(f"/{language}/error")
 
-    print("TIMER:", mailer.time_restriction, mailer.timer)
     mailer.start_timer()
 
     if not mailer.check_validity(email) or not name or not message:
@@ -60,11 +56,11 @@ def contact(language: str):
 
 @app.route("/<language>/error")
 def error(language: str):
-    return content_provider.language_site("result", language, mail_result=False)
+    return content_provider.language_site("result", language=language, mail_result=False)
 
 @app.route("/<language>/success")
 def success(language: str):
-    return content_provider.language_site("result", language, mail_result=True)
+    return content_provider.language_site("result", language=language, mail_result=True)
 
 
 if __name__ == "__main__":

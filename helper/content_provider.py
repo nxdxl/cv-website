@@ -59,7 +59,7 @@ class ContentProvider:
         return self._read_content("mail_status", language)
 
     
-    def language_site(self, page: str, language: str, mail_result: bool=False) -> str:
+    def language_site(self, page: str, language: str="en", mail_result: bool=False) -> str:
         page=page+".html"
         projects = self._read_projects(language)
         about_list, heading = self._read_about(language)

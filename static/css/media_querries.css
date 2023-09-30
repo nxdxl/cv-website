@@ -1,0 +1,157 @@
+/*-------------------------------------------------------*/
+/*---------------------Media-Queries---------------------*/
+/*-------------------------------------------------------*/
+
+@media (max-width: 1120px) {
+    .menu-bar {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+    #love {
+        align-items: center;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    #p-container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 730px) {
+    #top-menu-list {
+        display: none;
+    }
+    #top-menu-container {
+        display: none;
+    }
+    #header-wrapper {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        padding-left: 10px;
+    }
+    #top-icon-container {
+        width: 5rem;
+    }
+    #top-socials-list {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        padding-right: 50px;
+    }
+    .menu-bar {
+        align-items: center;
+        justify-content: start;
+        padding-left: 30px;
+        height: 100%;
+    }
+    #top-socials-list ul {
+        display: none;
+    }
+    .top-nav {
+        display: flex;
+    }
+    #menu-burger {
+        display: flex;
+    }
+    #about-menu ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    #content-wrapper {
+        padding: 20px;
+        max-width: 720px;
+    }
+    #badges ul {
+        grid-template-columns: repeat(5, 1fr);
+        gap: 4rem;
+    }
+}
+
+@media (max-width: 720px) {
+    #projects {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 0;
+    }
+    #projects h1, #projects h2 {
+        padding-left: 20px;
+    }
+    #projects h2 {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    #projects h3 {
+        font-size: 1.6rem;
+    }
+    .project-containers {
+        padding: 50px;
+        display: grid;
+        gap: 2rem;
+        grid-auto-flow: column;
+        grid-auto-columns: 60%;
+        overflow-x: scroll;
+        scroll-padding: 2rem;
+    }
+    .project {
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 610px) {
+    #badges ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 450px) {
+    #badges ul {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+    .project-containers {
+        padding: 50px;
+        display: grid;
+        gap: 2rem;
+        grid-auto-flow: column;
+        grid-auto-columns: 100%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-padding: 2rem;
+    }
+    .project-containers > * {
+        scroll-snap-align: start;
+    }
+    #p-container {
+        width: 100%;
+        padding-left: 20px;
+    }
+}
+
+@media (max-width: 350px) {
+    #badges ul {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* Body height fix for ios */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 450px) {
+        body {
+            /* The hack for Safari */
+            height: -webkit-fill-available;
+        }
+        #home {
+            display: none;
+        }
+        #video-container {
+            margin-top: 5rem;
+        }
+    }
+}
+
+/*-------------------------------------------------------*/
+/*---------------------Media-Queries---------------------*/
+/*-------------------------------------------------------*/
