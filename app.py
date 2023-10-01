@@ -26,9 +26,9 @@ def website():
     paragraphs = []
     return render_template("project_read_more.html", video_source=video_source, heading=heading, paragraphs=paragraphs)
 
-@app.route("/en/projects/downloader")
-def downloader():
-    return render_template("project_read_more.html")
+@app.route("/<language>/projects/<project>")
+def downloader(language: str, project: str):
+    return content_provider.language_site("project_read_more", language=language, project=project)
 
 @app.route("/en/projects/banking")
 def banking():

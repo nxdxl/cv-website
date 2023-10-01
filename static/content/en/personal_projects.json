@@ -15,8 +15,7 @@
                 "icons/git.svg",
                 "icons/html.svg",
                 "icons/css.svg"
-            ],
-            "read_more": "True"
+            ]
         },
         {
             "id": "downloader",
@@ -28,7 +27,7 @@
                 "icons/python.svg",
                 "icons/git.svg"
             ],
-            "read_more": "True"
+            "read_more": "/en/projects/downloader"
         }
     ]
 }

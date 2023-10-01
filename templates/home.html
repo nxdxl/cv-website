@@ -51,7 +51,7 @@
             </div>
             <div class="project-link flex-center">
                 {% if project['read_more'] %}
-                <a href="">Read More</a>
+                <a href="{{ project['read_more'] }}">Read More</a>
                 {% endif %}
                 {% if project['gitlab'] %}
                 <a href="{{ project['gitlab'] }}" target="_blank">GitLab</a>
