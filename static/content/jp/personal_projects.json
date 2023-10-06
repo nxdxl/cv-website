@@ -5,7 +5,7 @@
         {
             "id": "website",
             "name": "ウェブサイト",
-            "short_description": "まさに今ごらんになってるこのウェブサイトです。",
+            "short_description": "まさに今ごらんになっているこのウェブサイトです。",
             "img_source": "img/cv-website.png",
             "gitlab": "https://gitlab.tomkeilers.com/ic34umer/cv-website",
             "skills": [
