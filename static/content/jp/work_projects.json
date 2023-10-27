@@ -5,7 +5,7 @@
         {
             "id": "adsb",
             "name": "ADSB-インタフェース",
-            "short_description": "飛行機の ADSB 通信を解読し、そのデーターによりカメラを飛行機に整列するためのプログラム。",
+            "short_description": "飛行機の ADSB 通信データを解析し、その情報に基づいてカメラが飛行機の方向へ向けられるようなプログラム",
             "img_source": "img/plane-bounding-box.png",
             "skills": [
                 "icons/python.svg",
